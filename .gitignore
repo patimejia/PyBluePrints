@@ -2,3 +2,6 @@
 temp/
 src/__pycache__/
 tests/__pycache__/
+src/.DS_Store
+tests/.DS_Store
+.DS_Store

@@ -1,6 +1,6 @@
 # Project Scaffolds
 
-A Python-based generator for creating well-organized project structures using best practices, `unittest`, `pytest`, and the Python Standard Library. Supports basic, intermediate, and advanced folder configurations for maintainable projects.
+A Python-based project scaffolding tool for creating well-organized project structures using best practices, `fixture`, `pytest`, and the Python Standard Library. Supports basic, intermediate, and advanced folder configurations for maintainable projects.
 
 ## Why is File Structure Important?
 
@@ -22,68 +22,102 @@ This project scaffold generator supports three different file structures:
 
 ### Basic
 
-```shell
+```
 basic_project/
-│
-├── LICENSE
+├── .gitignore
 ├── README.md
-│
-├── src/
-│ ├── init.py
-│ └── main.py
-│
-└── tests/
-├── init.py
-└── test_main.py
+├── requirements.txt
+├── src
+│   ├── __init__.py
+│   └── main.py
+└── tests
+    ├── __init__.py
+    └── test_main.py
 ```
 
 ### Intermediate
 
-```shell
+```
 intermediate_project/
-│
-├── LICENSE
+├── .gitignore
 ├── README.md
-│
-├── src/
-│ ├── init.py
-│ ├── main.py
-│ └── utils/
-│ ├── init.py
-│ └── helpers.py
-│
-└── tests/
-├── init.py
-├── test_main.py
-└── test_helpers.py
+├── requirements.txt
+├── src
+│   ├── __init__.py
+│   ├── main.py
+│   └── utils
+│       ├── __init__.py
+│       └── helpers.py
+└── tests
+    ├── __init__.py
+    ├── test_helpers.py
+    └── test_main.py
 ```
 
 ### Advanced
 
-```shell
+```
 advanced_project/
-│
-├── LICENSE
+├── .gitignore
 ├── README.md
-│
-├── src/
-│ ├── init.py
-│ ├── main.py
-│ ├── utils/
-│ │ ├── init.py
-│ │ └── helpers.py
-│ └── services/
-│ ├── init.py
-│ └── service.py
-│
-└── tests/
-├── init.py
-├── test_main.py
-├── test_helpers.py
-└── test_service.py
+├── requirements.txt
+├── src
+│   ├── __init__.py
+│   ├── main.py
+│   ├── services
+│   │   ├── __init__.py
+│   │   └── service.py
+│   └── utils
+│       ├── __init__.py
+│       └── helpers.py
+└── tests
+    ├── __init__.py
+    ├── test_helpers.py
+    ├── test_main.py
+    └── test_service.py
 ```
 
-For more information on installation, usage, and testing, refer to the respective sections in this `README.md` file.
+### Extended
+
+```
+extended_project/
+├── .gitignore
+├── README.md
+├── requirements.txt
+├── assets
+│   └── images
+├── data
+│   ├── input
+│   ├── intermediate
+│   └── output
+├── src
+│   ├── __init__.py
+│   ├── main.py
+│   ├── services
+│   │   ├── __init__.py
+│   │   └── service.py
+│   └── utils
+│       ├── __init__.py
+│       └── helpers.py
+└── tests
+    ├── __init__.py
+    ├── test_helpers.py
+    ├── test_main.py
+    └── test_service.py
+```
+
+## Customization
+
+This project scaffold generator is designed to be flexible, allowing you to customize the generated file structure according to your needs. If you want to further tailor the project structure, you can make modifications to the `main.py` script.
+
+Here are some steps you can follow to customize the project structure:
+
+1. Open the `main.py` script in your preferred text editor or IDE.
+2. Locate the functions for each project structure: `create_basic_structure`, `create_intermediate_structure`, `create_advanced_structure`, and `create_extended_structure`.
+3. Modify these functions to add, remove, or rename directories and files as desired.
+   - To create a new directory, use the `create_directory()` function with the desired path.
+   - To create a new file, use the `create_file()` function with the desired path.
+4. Save your changes and run the modified script to generate the updated project structure.
 
 ## Contributing
 

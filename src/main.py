@@ -45,6 +45,22 @@ def create_extended_structure(output_path):
     create_directory(os.path.join(output_path, "data", "intermediate"))
     create_directory(os.path.join(output_path, "data", "output"))
 
+def create_modular_structure(output_path, module_names):
+    src_path = os.path.join(output_path, "src")
+    tests_path = os.path.join(output_path, "tests")
+    create_directory(src_path)
+    create_directory(tests_path)  # Create the "tests" directory
+    create_file(os.path.join(output_path, ".gitignore"))
+    create_file(os.path.join(output_path, "README.md"))
+    create_file(os.path.join(output_path, "requirements.txt"))
+    create_file(os.path.join(src_path, "__init__.py"))  # Create the "__init__.py" file in the "src" directory
+
+    for module_name in module_names:
+        module_path = os.path.join(src_path, module_name)
+        create_directory(module_path)
+        create_file(os.path.join(module_path, "__init__.py"))
+        create_file(os.path.join(module_path, f"{module_name}.py"))
+
 def main(output_path, structure):
     if structure == "basic":
         create_basic_structure(output_path)
@@ -54,8 +70,10 @@ def main(output_path, structure):
         create_advanced_structure(output_path)
     elif structure == "extended":
         create_extended_structure(output_path)
+    elif structure == "modular":  # Add the 'modular' option
+        create_modular_structure(output_path, ["utils", "services", "models"])  # Provide the default module_names
     else:
-        print(f"Invalid structure '{structure}'. Choose from 'basic', 'intermediate', 'advanced', or 'extended'.")
+        print(f"Invalid structure '{structure}'. Choose from 'basic', 'intermediate', 'advanced', 'extended', or 'modular'.")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Create a project structure.")

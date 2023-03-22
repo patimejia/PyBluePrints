@@ -2,7 +2,7 @@ import os
 from pathlib import Path
 import pytest
 import shutil
-from src.main import create_basic_structure, create_intermediate_structure, create_advanced_structure, create_extended_structure
+from src.main import create_basic_structure, create_intermediate_structure, create_advanced_structure, create_extended_structure, create_modular_structure
 
 @pytest.fixture
 def output_path(tmpdir):
@@ -63,3 +63,19 @@ def test_create_extended_structure(output_path: Path):
     assert (output_path / "data" / "intermediate").is_dir()
     assert (output_path / "data" / "output").is_dir()
     assert (output_path / "README.md").is_file()
+
+def test_create_modular_structure(output_path: Path):
+    module_names = ["utils", "services", "models"]
+    create_modular_structure(str(output_path), module_names)
+
+    assert (output_path / "src").is_dir()
+    assert (output_path / "tests").is_dir()
+    assert (output_path / "src" / "__init__.py").is_file()
+    assert (output_path / "README.md").is_file()
+    assert (output_path / "requirements.txt").is_file()
+
+    for module_name in module_names:
+        module_path = os.path.join(output_path, "src", module_name)
+        assert os.path.isdir(module_path)
+        assert os.path.isfile(os.path.join(module_path, "__init__.py"))
+        assert os.path.isfile(os.path.join(module_path, f"{module_name}.py"))

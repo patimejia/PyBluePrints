@@ -32,6 +32,28 @@ python src/main.py ../my_new_project/ extended
 
 This will create a new directory called `my_new_project` in the parent directory of the project scaffold generator. The `extended` argument specifies the project structure to generate. The available options are `basic`, `intermediate`, `advanced`, and `extended`.
 
+To run the main.py script, you can use the command line. First, open a terminal or command prompt, navigate to the directory containing the main.py file, and then run the following command:
+
+```
+python main.py <output_path> <structure>
+```
+
+Replace `<output_path>` with the desired output path for the project structure you want to create and `<structure>` with the structure you want to create, which can be one of the following options: `basic`, `intermediate`, `advanced`, `extended`, or `modular`.
+
+For example, to create a basic project structure in a folder called "my_project", you would run:
+
+```
+python main.py my_project basic
+```
+
+Similarly, to create a modular project structure in a folder called "my_modular_project", you would run:
+
+python src/main.py ../my_new_project/ extended
+
+`python main.py ../my_modular_project/ modular`
+
+Make sure you have Python installed on your system, and that the terminal or command prompt is pointing to the correct version of Python. If you have multiple versions installed, you may need to use `python3` instead of `python`.
+
 ## Project Structures
 
 This project scaffold generator supports three different file structures:
@@ -120,6 +142,40 @@ extended_project/
     ├── test_helpers.py
     ├── test_main.py
     └── test_service.py
+```
+
+# Modular
+
+```
+project_name/
+│
+├── src/
+│   ├── __init__.py
+│   ├── main.py
+│   ├── services/
+│   │   ├── __init__.py
+│   │   └── service.py
+│   └── utils/
+│       ├── __init__.py
+│       └── helpers.py
+│
+├── tests/
+│   ├── __init__.py
+│   ├── test_main.py
+│   ├── test_service.py
+│   └── test_helpers.py
+│
+├── assets/
+│   └── images/
+│
+├── data/
+│   ├── input/
+│   ├── intermediate/
+│   └── output/
+│
+├── .gitignore
+├── README.md
+└── requirements.txt
 ```
 
 ## Customization

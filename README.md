@@ -16,6 +16,22 @@ Some best practices for organizing Python projects include:
 - Adding a `LICENSE` file to specify the terms under which the project can be used.
 - Grouping related files together, such as scripts for different project structures.
 
+## Running the Project Scaffold Generator
+
+To run the project scaffold generator, follow these steps:
+
+1. Clone this repository to your local machine.
+2. Open the terminal and navigate to the project directory.
+3. Run the `main.py` script to generate the project structure of your choice.
+
+For example, to generate an `extended` project structure, run the following command:
+
+```bash
+python src/main.py ../my_new_project/ extended
+```
+
+This will create a new directory called `my_new_project` in the parent directory of the project scaffold generator. The `extended` argument specifies the project structure to generate. The available options are `basic`, `intermediate`, `advanced`, and `extended`.
+
 ## Project Structures
 
 This project scaffold generator supports three different file structures:

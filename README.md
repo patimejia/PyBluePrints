@@ -1,6 +1,16 @@
-# Project Scaffolds
+# PyBlueprintMaker
 
-A Python-based project scaffolding tool for creating well-organized project structures using best practices, `fixture`, `pytest`, and the Python Standard Library. Supports basic, intermediate, and advanced folder configurations for maintainable projects.
+`PyBlueprintMaker` is a Python-based project scaffolding tool that helps you create well-organized project structures using best-practices, `fixtures`, `pytest`, and the Python Standard Library. With support for `basic` to `modular` folder configurations and comprehensive testing, PyBlueprintMaker is the ultimate solution for maintainable projects.
+
+PyBlueprintMaker is easy to use and provides everything you need to get started quickly. Whether you're a seasoned developer or just getting started, PyBlueprintMaker is the perfect tool to help you streamline your workflow and create high-quality projects with ease.
+
+With PyBlueprintMaker, you can create project structures that are optimized for performance, scalability, and maintainability. Our tool provides support for a wide range of configurations, including basic, intermediate, advanced, and extended folder structures, so you can choose the one that's right for your project.
+
+PyBlueprintMaker also includes comprehensive testing support, with built-in pytest fixtures and support for all major testing frameworks. Our tool is fully customizable, with support for a wide range of plugins and add-ons that can help you take your projects to the next level.
+
+So what are you waiting for? Try PyBlueprintMaker today and see how easy it is to create high-quality, maintainable projects in Python!
+
+![scafolds](assets/scaffolds.jpeg)
 
 ## Why is File Structure Important?
 
@@ -16,185 +26,38 @@ Some best practices for organizing Python projects include:
 - Adding a `LICENSE` file to specify the terms under which the project can be used.
 - Grouping related files together, such as scripts for different project structures.
 
-## Running the Project Scaffold Generator
+## Installation
 
-To run the project scaffold generator, follow these steps:
-
-1. Clone this repository to your local machine.
-2. Open the terminal and navigate to the project directory.
-3. Run the `main.py` script to generate the project structure of your choice.
-
-For example, to generate an `extended` project structure, run the following command:
+You can install PyBlueprintMaker via `pip`:
 
 ```bash
-python src/main.py ../my_new_project/ extended
+pip install PyBlueprintMaker
 ```
 
-This will create a new directory called `my_new_project` in the parent directory of the project scaffold generator. The `extended` argument specifies the project structure to generate. The available options are `basic`, `intermediate`, `advanced`, and `extended`.
+## Usage
 
-To run the main.py script, you can use the command line. First, open a terminal or command prompt, navigate to the directory containing the main.py file, and then run the following command:
+To use PyBlueprintMaker, run the following command:
 
-```
-python main.py <output_path> <structure>
-```
+`PyBlueprintMaker [output_path] [structure]`
 
-Replace `<output_path>` with the desired output path for the project structure you want to create and `<structure>` with the structure you want to create, which can be one of the following options: `basic`, `intermediate`, `advanced`, `extended`, or `modular`.
+Where output_path is the desired output path for the project structure and structure is the project structure to create. The supported structures are basic, intermediate, advanced, extended, or modular.
 
-For example, to create a basic project structure in a folder called "my_project", you would run:
+For example, to create a basic project structure in a folder named `my_project`, run the following command:
 
 ```
-python main.py my_project basic
+PyBlueprintMaker my_project basic
 ```
-
-Similarly, to create a modular project structure in a folder called "my_modular_project", you would run:
-
-python src/main.py ../my_new_project/ extended
-
-`python main.py ../my_modular_project/ modular`
-
-Make sure you have Python installed on your system, and that the terminal or command prompt is pointing to the correct version of Python. If you have multiple versions installed, you may need to use `python3` instead of `python`.
-
-## Project Structures
-
-This project scaffold generator supports three different file structures:
-
-### Basic
-
-```
-basic_project/
-├── .gitignore
-├── README.md
-├── requirements.txt
-├── src
-│   ├── __init__.py
-│   └── main.py
-└── tests
-    ├── __init__.py
-    └── test_main.py
-```
-
-### Intermediate
-
-```
-intermediate_project/
-├── .gitignore
-├── README.md
-├── requirements.txt
-├── src
-│   ├── __init__.py
-│   ├── main.py
-│   └── utils
-│       ├── __init__.py
-│       └── helpers.py
-└── tests
-    ├── __init__.py
-    ├── test_helpers.py
-    └── test_main.py
-```
-
-### Advanced
-
-```
-advanced_project/
-├── .gitignore
-├── README.md
-├── requirements.txt
-├── src
-│   ├── __init__.py
-│   ├── main.py
-│   ├── services
-│   │   ├── __init__.py
-│   │   └── service.py
-│   └── utils
-│       ├── __init__.py
-│       └── helpers.py
-└── tests
-    ├── __init__.py
-    ├── test_helpers.py
-    ├── test_main.py
-    └── test_service.py
-```
-
-### Extended
-
-```
-extended_project/
-├── .gitignore
-├── README.md
-├── requirements.txt
-├── assets
-│   └── images
-├── data
-│   ├── input
-│   ├── intermediate
-│   └── output
-├── src
-│   ├── __init__.py
-│   ├── main.py
-│   ├── services
-│   │   ├── __init__.py
-│   │   └── service.py
-│   └── utils
-│       ├── __init__.py
-│       └── helpers.py
-└── tests
-    ├── __init__.py
-    ├── test_helpers.py
-    ├── test_main.py
-    └── test_service.py
-```
-
-# Modular
-
-```
-project_name/
-│
-├── src/
-│   ├── __init__.py
-│   ├── main.py
-│   ├── services/
-│   │   ├── __init__.py
-│   │   └── service.py
-│   └── utils/
-│       ├── __init__.py
-│       └── helpers.py
-│
-├── tests/
-│   ├── __init__.py
-│   ├── test_main.py
-│   ├── test_service.py
-│   └── test_helpers.py
-│
-├── assets/
-│   └── images/
-│
-├── data/
-│   ├── input/
-│   ├── intermediate/
-│   └── output/
-│
-├── .gitignore
-├── README.md
-└── requirements.txt
-```
-
-## Customization
-
-This project scaffold generator is designed to be flexible, allowing you to customize the generated file structure according to your needs. If you want to further tailor the project structure, you can make modifications to the `main.py` script.
-
-Here are some steps you can follow to customize the project structure:
-
-1. Open the `main.py` script in your preferred text editor or IDE.
-2. Locate the functions for each project structure: `create_basic_structure`, `create_intermediate_structure`, `create_advanced_structure`, and `create_extended_structure`.
-3. Modify these functions to add, remove, or rename directories and files as desired.
-   - To create a new directory, use the `create_directory()` function with the desired path.
-   - To create a new file, use the `create_file()` function with the desired path.
-4. Save your changes and run the modified script to generate the updated project structure.
 
 ## Contributing
 
-Contributions to this repository are welcome and encouraged! If you have suggestions for improving the file structure or the code organization, please submit a pull request. Let's keep improving our best practices and methods for organizing code and file directories in Python projects!
+If you find any issues or have suggestions, feel free to open an issue or submit a pull request.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+PyBlueprintMaker is licensed under the [MIT License](LICENSE).
+
+## Buy me a coffee
+
+If you like this project, please consider buying me a coffee. ☕
+
+<script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="patimejiaS" data-color="#5F7FFF" data-emoji="" data-font="Cookie" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#ffffff" data-coffee-color="#FFDD00" ></script>

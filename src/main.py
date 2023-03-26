@@ -1,67 +1,4 @@
-import os
-import argparse
-
-def create_directory(path):
-    os.makedirs(path)
-
-def create_file(path):
-    with open(path, "w") as file:
-        pass
-
-def create_basic_structure(output_path):
-    create_directory(os.path.join(output_path, "src"))
-    create_directory(os.path.join(output_path, "tests"))
-
-    create_file(os.path.join(output_path, ".gitignore"))
-    create_file(os.path.join(output_path, "README.md"))
-    create_file(os.path.join(output_path, "requirements.txt"))
-    create_file(os.path.join(output_path, "src", "__init__.py"))
-    create_file(os.path.join(output_path, "tests", "__init__.py"))
-    create_file(os.path.join(output_path, "src", "main.py"))
-    create_file(os.path.join(output_path, "tests", "test_main.py"))
-
-def create_intermediate_structure(output_path):
-    create_basic_structure(output_path)
-    create_directory(os.path.join(output_path, "src", "utils"))
-
-    create_file(os.path.join(output_path, "src", "utils", "__init__.py"))
-    create_file(os.path.join(output_path, "src", "utils", "helpers.py"))
-    create_file(os.path.join(output_path, "tests", "test_helpers.py"))
-
-def create_advanced_structure(output_path):
-    create_intermediate_structure(output_path)
-    create_directory(os.path.join(output_path, "src", "services"))
-
-    create_file(os.path.join(output_path, "src", "services", "__init__.py"))
-    create_file(os.path.join(output_path, "src", "services", "service.py"))
-    create_file(os.path.join(output_path, "tests", "test_service.py"))
-
-def create_extended_structure(output_path):
-    create_advanced_structure(output_path)
-    create_directory(os.path.join(output_path, "assets"))
-    create_directory(os.path.join(output_path, "data"))
-    create_directory(os.path.join(output_path, "assets", "images"))
-    create_directory(os.path.join(output_path, "data", "input"))
-    create_directory(os.path.join(output_path, "data", "intermediate"))
-    create_directory(os.path.join(output_path, "data", "output"))
-
-def create_modular_structure(output_path, module_names):
-    src_path = os.path.join(output_path, "src")
-    tests_path = os.path.join(output_path, "tests")
-    create_directory(src_path)
-    create_directory(tests_path)  # Create the "tests" directory
-    create_file(os.path.join(output_path, ".gitignore"))
-    create_file(os.path.join(output_path, "README.md"))
-    create_file(os.path.join(output_path, "requirements.txt"))
-    create_file(os.path.join(src_path, "__init__.py"))  # Create the "__init__.py" file in the "src" directory
-
-    for module_name in module_names:
-        module_path = os.path.join(src_path, module_name)
-        create_directory(module_path)
-        create_file(os.path.join(module_path, "__init__.py"))
-        create_file(os.path.join(module_path, f"{module_name}.py"))
-
-def main(output_path, structure):
+def main(output_path, structure, modules=None):
     if structure == "basic":
         create_basic_structure(output_path)
     elif structure == "intermediate":
@@ -70,16 +7,18 @@ def main(output_path, structure):
         create_advanced_structure(output_path)
     elif structure == "extended":
         create_extended_structure(output_path)
-    elif structure == "modular":  # Add the 'modular' option
-        create_modular_structure(output_path, ["utils", "services", "models"])  # Provide the default module_names
+    elif structure == "modular":
+        module_names = modules if modules else ["utils", "services", "models"]
+        create_modular_structure(output_path, module_names)
     else:
         print(f"Invalid structure '{structure}'. Choose from 'basic', 'intermediate', 'advanced', 'extended', or 'modular'.")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Create a project structure.")
     parser.add_argument("output_path", help="The desired output path for the project structure.")
-    parser.add_argument("structure", help="The project structure to create: basic, intermediate, advanced, or extended.")
+    parser.add_argument("structure", help="The project structure to create: basic, intermediate, advanced, extended, or modular.")
+    parser.add_argument("-m", "--modules", nargs="*", help="The list of module names for the 'modular' structure option.")
 
     args = parser.parse_args()
 
-    main(args.output_path, args.structure)
+    main(args.output_path, args.structure, args.modules)

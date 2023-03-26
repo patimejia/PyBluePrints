@@ -48,3 +48,11 @@ twine upload dist/*
 ```
 
 Make sure you have followed all these steps and removed the old files from the `dist` and `build` folders before uploading the new package to avoid confusion.
+
+##
+
+Delete the build, dist, and .egg-info directories:
+
+```
+rm -rf build dist *.egg-info
+```

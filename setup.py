@@ -12,7 +12,7 @@ setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/patimejia/PyBlueprintMaker",
-    packages=find_packages1),
+    packages=find_packages(),
     classifiers=[
         "Development Status :: 3 - Alpha",
         "Intended Audience :: Developers",
@@ -25,14 +25,14 @@ setup(
         "Topic :: Software Development :: Libraries :: Python Modules",
         "Topic :: Utilities",
     ],
-    keywords="project-scaffolding project-structure fixture pytest",
+    keywords="project-scaffolding project-structure python-project-template python-project-generator best-practices pytest fixtures python-standard-library code-quality project-management",
+
     install_requires=[
         # Add your dependencies here
     ],
     entry_points={
         "console_scripts": [
-            "PyBlueprintMaker=src.main:main1,
-
+            "PyBlueprintMaker=src.main:main",
         ],
     },
 )

@@ -1,14 +1,14 @@
-# PyBluePrints
+# PyBlueprintMaker
 
-`PyBluePrints` is a Python-based project scaffolding tool that helps you create well-organized project structures using best-practices, `fixtures`, `pytest`, and the Python Standard Library. With support for `basic` to `modular` folder configurations and comprehensive testing, PyBluePrints is the ultimate solution for maintainable projects.
+`PyBlueprintMaker` is a Python-based project scaffolding tool that helps you create well-organized project structures using best-practices, `fixtures`, `pytest`, and the Python Standard Library. With support for `basic` to `modular` folder configurations and comprehensive testing, PyBlueprintMaker is the ultimate solution for maintainable projects.
 
-PyBluePrints is easy to use and provides everything you need to get started quickly. Whether you're a seasoned developer or just getting started, PyBluePrints is the perfect tool to help you streamline your workflow and create high-quality projects with ease.
+PyBlueprintMaker is easy to use and provides everything you need to get started quickly. Whether you're a seasoned developer or just getting started, PyBlueprintMaker is the perfect tool to help you streamline your workflow and create high-quality projects with ease.
 
-With PyBluePrints, you can create project structures that are optimized for performance, scalability, and maintainability. Our tool provides support for a wide range of configurations, including basic, intermediate, advanced, and extended folder structures, so you can choose the one that's right for your project.
+With PyBlueprintMaker, you can create project structures that are optimized for performance, scalability, and maintainability. Our tool provides support for a wide range of configurations, including basic, intermediate, advanced, and extended folder structures, so you can choose the one that's right for your project.
 
-PyBluePrints also includes comprehensive testing support, with built-in pytest fixtures and support for all major testing frameworks. Our tool is fully customizable, with support for a wide range of plugins and add-ons that can help you take your projects to the next level.
+PyBlueprintMaker also includes comprehensive testing support, with built-in pytest fixtures and support for all major testing frameworks. Our tool is fully customizable, with support for a wide range of plugins and add-ons that can help you take your projects to the next level.
 
-So what are you waiting for? Try PyBluePrints today and see how easy it is to create high-quality, maintainable projects in Python!
+So what are you waiting for? Try PyBlueprintMaker today and see how easy it is to create high-quality, maintainable projects in Python!
 
 ![scafolds](assets/scaffolds.jpeg)
 
@@ -28,24 +28,24 @@ Some best practices for organizing Python projects include:
 
 ## Installation
 
-You can install PyBluePrints via `pip`:
+You can install PyBlueprintMaker via `pip`:
 
 ```bash
-pip install PyBluePrints
+pip install PyBlueprintMaker
 ```
 
 ## Usage
 
-To use PyBluePrints, run the following command:
+To use PyBlueprintMaker, run the following command:
 
-`PyBluePrints [output_path] [structure]`
+`PyBlueprintMaker [output_path] [structure]`
 
 Where output_path is the desired output path for the project structure and structure is the project structure to create. The supported structures are basic, intermediate, advanced, extended, or modular.
 
 For example, to create a basic project structure in a folder named `my_project`, run the following command:
 
 ```
-PyBluePrints my_project basic
+PyBlueprintMaker my_project basic
 ```
 
 ## Contributing
@@ -54,7 +54,7 @@ If you find any issues or have suggestions, feel free to open an issue or submit
 
 ## License
 
-PyBluePrints is licensed under the [MIT License](LICENSE).
+PyBlueprintMaker is licensed under the [MIT License](LICENSE).
 
 ## Support
 

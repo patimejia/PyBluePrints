@@ -4,15 +4,15 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setup(
-    name="PyBluePrints",
-    version="0.1.0",
+    name="PyBlueprintMaker",
+    version="0.1.1",
     author="Patricia Mejia",
     author_email="contact@patimejia.com",
     description="Python-based tool that helps you create organized project directories or structures. It uses best practices and incorporates fixtures, pytest, and the Python Standard Library to ensure the quality of the project's organization and structure",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/patimejia/PyBluePrints",
-    packages=find_packages(),
+    url="https://github.com/patimejia/PyBlueprintMaker",
+    packages=find_packages1),
     classifiers=[
         "Development Status :: 3 - Alpha",
         "Intended Audience :: Developers",
@@ -31,7 +31,7 @@ setup(
     ],
     entry_points={
         "console_scripts": [
-            "PyBluePrints=src.main:main",
+            "PyBlueprintMaker=src.main:main1,
 
         ],
     },

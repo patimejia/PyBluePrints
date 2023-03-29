@@ -111,8 +111,6 @@ def create_web_app_structure(output_path: str):
 
 
 
-
-
 def main(output_path, structure, modules=None):
     if structure == "etl":
         create_etl_structure(output_path)

@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setup(
     name="PyBlueprintMaker",
-    version="0.1.1",
+    version="0.1.2",
     author="Patricia Mejia",
     author_email="contact@patimejia.com",
     description="Python-based tool that helps you create organized project directories or structures. It uses best practices and incorporates fixtures, pytest, and the Python Standard Library to ensure the quality of the project's organization and structure",

@@ -1,6 +1,8 @@
 # PyBlueprintMaker
 
-`PyBlueprintMaker` is a Python-based project scaffolding tool that helps you create well-organized project structures using best-practices, `fixtures`, `pytest`, and the Python Standard Library. With support for `basic` to `modular` folder configurations and comprehensive testing, PyBlueprintMaker is the ultimate solution for maintainable projects.
+`PyBlueprintMaker` is a Python-based project scaffolding tool that helps you create well-organized project structures using best-practices, `fixtures`, `pytest`, and the Python Standard Library. With support for various folder configurations and comprehensive testing, PyBlueprintMaker is the ultimate solution for maintainable projects.
+
+![scaffolds](assets/scaffolds.jpeg)
 
 ## Why is File Structure Important?
 
@@ -18,7 +20,7 @@ Some best practices for organizing Python projects include:
 
 ## Installation
 
-To install PyBlueprintMaker, you can use pip:
+To install PyBlueprintMaker, you can use `pip`:
 
 ```
 pip install PyBlueprintMaker
@@ -37,24 +39,30 @@ Make sure to also include any necessary dependencies that are not automatically 
 To use PyBlueprintMaker, run the following command:
 
 ```
-PyBlueprintMaker [output_path] [structure]
-```
-
-Where `output_path` is the desired output path for the project structure and structure is the project structure to create. The supported structures are` basic`, `intermediate`, `advanced`, `extended`, or `modular`.
-
-For example, to create a `basic` project structure in a folder named `my_project`, run the following command:
+python main.py [output_path] [structure]
 
 ```
-PyBlueprintMaker my_project basic
+
+Where `output_path` is the desired output path for the project structure and `structure` is the project structure to create. The supported structures are `web_app`, `data_science`, or `modular`.
+
+For example, to create a `web_app` project structure in a folder named `my_project`, run the following command:
+
+```
+python main.py my_project web_app
+
 ```
 
 ## Outputs and Structures
 
-PyBlueprintMaker supports the following project structures:
+PyBlueprintMaker supports four project structures: `etl`, `modular`, `ml`, and `web`.
 
-- `basic`: This structure is intended for simple projects with a single Python script and a `README.md` file.
+- The `etl` structure is designed for data engineering projects and includes directories for src, tests, and data with subdirectories for extract, transform, and load. This structure helps ensure the separation of concerns and promotes modularity in data processing.
 
-These folder structures are designed to accommodate various aspects of data architecture and data science projects, including data storage, version control, automated testing, containerization, and reproducibility. The most advanced structure is intended for projects with complex configurations and additional tools for automation and collaboration.
+- The `modular` structure is intended for projects that consist of reusable modules that perform specific functions. It includes directories for src and tests, with the option to specify the module names as arguments. This structure helps facilitate code reuse and modular design.
+
+- The `ml` structure is designed for machine learning projects and includes directories for src, tests, and data with subdirectories for data and models. This structure promotes good coding practices for machine learning, including separate data and model subdirectories, and separate preprocess, features, train, and evaluate scripts.
+
+- The `web` structure is intended for web application projects and includes directories for src, tests, static, and templates. This structure follows best practices for web development, with src containing the application logic, static containing static files such as CSS and JavaScript, and templates containing the HTML templates.
 
 ## Contributing
 
@@ -62,7 +70,7 @@ If you find any issues or have suggestions, feel free to open an issue or submit
 
 ## License
 
-PyBlueprintMaker is licensed under the MIT License.
+PyBlueprintMaker is licensed under the [MIT LICENSE](LICENSE).
 
 ## Support
 

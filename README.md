@@ -22,7 +22,8 @@ Some best practices for organizing Python projects include:
 
 To install PyBlueprintMaker, you can use `pip`:
 
-```
+```sh
+# WIP: Installing as package
 pip install PyBlueprintMaker
 ```
 
